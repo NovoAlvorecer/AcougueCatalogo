@@ -352,27 +352,45 @@ main {
 }
 
 .unidade-redes {
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-  flex-wrap: wrap;
   margin-top: 0.75rem;
   padding-top: 0.65rem;
   border-top: 1px solid rgba(245, 217, 160, 0.18);
 }
 
-.unidade-redes a {
-  font-size: 0.82rem;
-  padding: 0.35rem 0.85rem;
-  border: 1px solid rgba(245, 217, 160, 0.35);
-  border-radius: 999px;
-  transition: background-color 0.15s, border-color 0.15s;
+.unidade-redes-titulo {
+  font-size: 0.85rem;
+  color: #d9c3a3;
+  margin: 0 0 0.6rem 0 !important;
 }
 
-.unidade-redes a:hover {
-  background-color: rgba(245, 217, 160, 0.08);
-  border-color: rgba(245, 217, 160, 0.6);
+.unidade-redes-icones {
+  display: flex;
+  justify-content: center;
+  gap: 0.85rem;
+}
+
+.unidade-redes-icones a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  border: 1px solid rgba(245, 217, 160, 0.35);
+  color: #f5d9a0;
+  transition: background-color 0.15s, border-color 0.15s, transform 0.15s;
+}
+
+.unidade-redes-icones a:hover {
+  background-color: rgba(245, 217, 160, 0.1);
+  border-color: rgba(245, 217, 160, 0.7);
+  transform: translateY(-2px);
   text-decoration: none;
+}
+
+.unidade-redes-icones svg {
+  width: 1.2rem;
+  height: 1.2rem;
 }
 
 @media (max-width: 600px) {
