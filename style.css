@@ -330,47 +330,174 @@ main {
   grid-template-columns: 1fr;
   gap: 1.25rem;
   margin: 0.5rem auto 1rem;
-  max-width: 720px;
+  max-width: 520px;
 }
 
 .unidade {
-  text-align: center;
-  padding: 0.5rem 0.25rem;
+  background: #0e0e0e;
+  border: 1px solid rgba(245, 217, 160, 0.18);
+  border-radius: 12px;
+  overflow: hidden;
+  text-align: left;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);
+}
+
+.unidade-foto {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1104 / 560;
+  object-fit: cover;
+}
+
+.unidade-corpo {
+  padding: 1.25rem 1.4rem 1.4rem;
 }
 
 .unidade h3 {
-  font-size: 0.82rem;
-  color: #f5d9a0;
-  margin-bottom: 0.5rem;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
+  font-size: 1.3rem;
+  color: #fff;
+  margin-bottom: 0.9rem;
   font-weight: 700;
+  letter-spacing: 0.01em;
+  text-transform: none;
 }
 
-.unidade p {
-  font-size: 0.88rem;
-  line-height: 1.45;
-  margin: 0.1rem 0;
+.unidade-info {
+  display: grid;
+  gap: 0.55rem;
+  margin-bottom: 1.1rem;
+  padding-bottom: 1.1rem;
+  border-bottom: 1px solid rgba(245, 217, 160, 0.18);
+}
+
+.unidade-info-linha {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.7rem;
+  font-size: 0.92rem;
+  color: #f5efe6;
+}
+
+.unidade-info-linha svg {
+  flex-shrink: 0;
+  width: 1.05rem;
+  height: 1.05rem;
+  color: #f5d9a0;
+  margin-top: 0.18rem;
+}
+
+.unidade-info-linha a {
+  color: #f5efe6;
+  text-decoration: none;
+}
+
+.unidade-info-linha a:hover {
+  color: #f5d9a0;
+  text-decoration: underline;
 }
 
 .unidade-horario {
-  margin-top: 0.55rem !important;
-  padding-top: 0.5rem;
-  border-top: 1px solid rgba(245, 217, 160, 0.18);
-  font-size: 0.85rem;
   color: #d9c3a3;
+  font-size: 0.88rem;
 }
 
-.unidade-redes {
-  margin-top: 0.75rem;
-  padding-top: 0.65rem;
-  border-top: 1px solid rgba(245, 217, 160, 0.18);
+.unidade-ctas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.55rem;
+  margin-bottom: 1.1rem;
 }
 
-.unidade-redes-titulo {
-  font-size: 0.85rem;
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  font-size: 0.92rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: 1px solid transparent;
+  transition: transform 0.12s, background 0.12s, border-color 0.12s;
+  cursor: pointer;
+}
+
+.btn svg { width: 1.05rem; height: 1.05rem; }
+
+.btn.btn-primario {
+  grid-column: 1 / -1;
+  background: #f5d9a0;
+  color: #1a1208;
+  font-weight: 700;
+}
+
+.btn.btn-primario:hover {
+  background: #ffe6b5;
+  color: #1a1208;
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+
+.btn-secundario {
+  background: transparent;
+  color: #f5d9a0;
+  border-color: rgba(245, 217, 160, 0.5);
+}
+
+.btn-secundario:hover {
+  background: rgba(245, 217, 160, 0.08);
+  border-color: #f5d9a0;
+  transform: translateY(-1px);
+  text-decoration: none;
+}
+
+.avaliacao {
+  background: rgba(245, 217, 160, 0.06);
+  border: 1px solid rgba(245, 217, 160, 0.18);
+  border-radius: 8px;
+  padding: 0.95rem 1rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.avaliacao-titulo {
+  font-size: 0.92rem;
+  color: #f5efe6;
+  margin: 0 0 0.15rem 0 !important;
+}
+
+.avaliacao-titulo .estrelas {
+  color: #f5d9a0;
+  letter-spacing: 0.1em;
+}
+
+.avaliacao-sub {
+  font-size: 0.78rem;
   color: #d9c3a3;
-  margin: 0 0 0.6rem 0 !important;
+  margin: 0 0 0.75rem 0 !important;
+}
+
+.btn-review {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.55rem 1rem;
+  background: transparent;
+  color: #f5d9a0;
+  border: 1px solid rgba(245, 217, 160, 0.5);
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: background 0.12s, border-color 0.12s;
+}
+
+.btn-review:hover {
+  background: rgba(245, 217, 160, 0.1);
+  border-color: #f5d9a0;
+  text-decoration: none;
 }
 
 .unidade-redes-icones {
@@ -403,8 +530,11 @@ main {
   height: 1.2rem;
 }
 
-@media (max-width: 600px) {
-  .unidades { grid-template-columns: 1fr; gap: 1.1rem; }
+@media (max-width: 480px) {
+  .unidade-corpo { padding: 1.1rem 1.1rem 1.2rem; }
+  .unidade h3 { font-size: 1.15rem; }
+  .unidade-ctas { grid-template-columns: 1fr; }
+  .btn-primario { grid-column: auto; }
 }
 
 .rodape a {
